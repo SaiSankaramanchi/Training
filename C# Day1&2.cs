@@ -1,3 +1,27 @@
+//Conceptual questions (All the conceptual questions for both the assignments are together below)
+
+//1. What type would you choose for the following “numbers”? 
+// int, int, int, String, double, string, double, double, long, ulong, long
+// 2. Boxing is the process of converting a value type to the type object or to any interface type implemented by this value type. When the common language runtime (CLR) boxes a value type, it wraps the value inside a System.Object instance and stores it on the managed heap. Unboxing extracts the value type from the object. Boxing is implicit; unboxing is explicit. The concept of boxing and unboxing underlies the C# unified view of the type system in which a value of any type can be treated as an object.
+//3. Managed resources are those that are pure . NET code and managed by the runtime and are under its direct control. Unmanaged resources are those that are not. File handles, pinned memory, COM objects, database connections etc.
+// 4. . NET's garbage collector manages the allocation and release of memory for your application. Each time you create a new object, the common language runtime allocates memory for the object from the managed heap.
+// 5. Dividing by zero is an operation that has no meaning in ordinary arithmetic and is, therefore, undefined.
+// 6. Dividing a floating-point value by zero doesn't throw an exception; it results in positive infinity, negative infinity, or not a number (NaN)
+// 7. If an integer addition overflows, then the result is the low-order bits of the mathematical sum as represented in some sufficiently large two's-complement format. If overflow occurs, then the sign of the result is not the same as the sign of the mathematical sum of the two operand values
+// 8. The difference between the two lies in their return values. The prefix increment returns the value of a variable after it has been incremented.
+// 9. A break statement results in the termination of the statement to which it applies ( switch , for , do , or while ). A continue statement is used to end the current loop iteration and return control to the loop statement.
+// 10. Similar to a While loop, a For loop consists of three parts: the keyword For that starts the loop, the condition being tested, and the EndFor keyword that terminates the loop.
+// 11. = is used for assigning the value to a variable and ==  is used for comparing two values. It returns 1 if both the values are equal otherwise returns 0.
+// 12. No it wont compile.
+// 13. The underscore (_) character replaces the default keyword to signify that it should match anything if reached. The bodies are now expressions instead of statements. The selected body becomes the switch expression's result.
+// 14. The IEnumerable interface permits enumeration by using a foreach loop.
+// 15. If a string is going to remain constant throughout the program, then use String class object because a String object is immutable. If a string can change (example: lots of logic and operations in the construction of the string) then using a StringBuilder is the best option.
+// 16. Array class provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays in the common language runtime.
+// 17. Array.Sort()
+// 18. Length property
+// 19. No, we cannot store multiple datatype in an Array, we can store similar datatype only in an Array.
+// 20. The Clone() method returns a new array (a shallow copy) object containing all the elements in the original array. The CopyTo() method copies the elements into another existing array. Both perform a shallow copy. A shallow copy means the contents (each array element) contains references to the same object as the elements in the original array. A deep copy (which neither of these methods performs) would create a new instance of each element's object, resulting in a different, yet identical object.
+// Coding questions (together below)
 // Question 1
 using static System.Console;
 
@@ -119,6 +143,7 @@ public class Program
            Once you're confident the program works correctly, you can substitute DateTime.Now for your variable 
            (or keep your variable and just assign DateTime.Now as its value, which is often a better approach).			
        */
+// Message prompt which greets according to time.
 namespace ConsoleApplication
 {
     public class Program
