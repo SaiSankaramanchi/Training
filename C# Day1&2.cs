@@ -1,0 +1,244 @@
+// Question 1
+using static System.Console;
+
+WriteLine("--------------------------------------------------------------------------");
+WriteLine("Type    Byte(s) of memory               Min                            Max");
+WriteLine("--------------------------------------------------------------------------");
+WriteLine($"sbyte   {sizeof(sbyte),-4} {sbyte.MinValue,30} {sbyte.MaxValue,30}");
+WriteLine($"byte    {sizeof(byte),-4} {byte.MinValue,30} {byte.MaxValue,30}");
+WriteLine($"short   {sizeof(short),-4} {short.MinValue,30} {short.MaxValue,30}");
+WriteLine($"ushort  {sizeof(ushort),-4} {ushort.MinValue,30} {ushort.MaxValue,30}");
+WriteLine($"int     {sizeof(int),-4} {int.MinValue,30} {int.MaxValue,30}");
+WriteLine($"uint    {sizeof(uint),-4} {uint.MinValue,30} {uint.MaxValue,30}");
+WriteLine($"long    {sizeof(long),-4} {long.MinValue,30} {long.MaxValue,30}");
+WriteLine($"ulong   {sizeof(ulong),-4} {ulong.MinValue,30} {ulong.MaxValue,30}");
+WriteLine($"float   {sizeof(float),-4} {float.MinValue,30} {float.MaxValue,30}");
+WriteLine($"double  {sizeof(double),-4} {double.MinValue,30} {double.MaxValue,30}");
+WriteLine($"decimal {sizeof(decimal),-4} {decimal.MinValue,30} {decimal.MaxValue,30}");
+WriteLine("--------------------------------------------------------------------------");
+
+//Question 2
+
+using System;
+using System.Numerics;
+
+public class CenturiesToNanoseconds
+{
+    public static void Main()
+    {
+        int centuries = int.Parse(Console.ReadLine());
+        int years = centuries * 100;
+        int days = (int)(years * 365.2422);
+        long hours = (long)(days * 24);
+        long minutes = hours * 60;
+        ulong seconds = (ulong)(minutes * 60);
+        ulong miliseconds = (ulong)(seconds * 1000);
+        BigInteger microseconds = miliseconds * 1000;
+        BigInteger nanoseconds = microseconds * 1000;
+
+        Console.WriteLine($"{centuries} centuries = {years} years = {days} days = {hours} hours = {minutes} minutes = {seconds} seconds = {miliseconds} milliseconds = {microseconds} microseconds = {nanoseconds} nanoseconds");
+    }
+}
+
+//Question 3
+
+using static System.Console;
+
+for (int i = 1; i <= 100; i++)
+{
+    if (i % 15 == 0)
+    {
+        Write("FizzBuzz");
+    }
+    else if (i % 5 == 0)
+    {
+        Write("Buzz");
+    }
+    else if (i % 3 == 0)
+    {
+        Write("Fizz");
+    }
+    else
+    {
+        Write(i);
+    }
+
+    
+    if (i < 100) Write(", ");
+
+    
+    if (i % 10 == 0) WriteLine();
+}
+WriteLine();
+
+//Question 4 (Star Pattern)
+
+public class Program
+{
+
+    public static void Main()
+    {
+        int number, i, k, count = 1;
+        Console.Write("Enter number of rows\n");
+        number = int.Parse(Console.ReadLine());
+        count = number - 1;
+        for (k = 1; k <= number; k++)
+        {
+            for (i = 1; i <= count; i++)
+                Console.Write(" ");
+            count--;
+            for (i = 1; i <= 2 * k - 1; i++)
+                Console.Write("*");
+            Console.WriteLine();
+        }
+        count = 1;
+        for (k = 1; k <= number - 1; k++)
+        {
+            for (i = 1; i <= count; i++)
+                Console.Write(" ");
+            count++;
+            for (i = 1; i <= 2 * (number - k) - 1; i++)
+                Console.Write("*");
+            Console.WriteLine();
+        }
+        Console.ReadLine();
+    }
+}
+
+/*
+           Write a program that greets the user using the appropriate greeting for the time of day. 
+           Use only if, not else or switch, statements to do so. Be sure to include the following greetings:
+           •"Good Morning"
+           •"Good Afternoon"
+           •"Good Evening"
+           •"Good Night"
+
+           It's up to you which times should serve as the starting and ending ranges for each of the greetings. 
+           If you need a refresher on how to get the current time, see Working with Dates and Times lesson. 
+           When testing your program, you'll probably want to use a DateTime variable you define, rather than the current time. 
+           Once you're confident the program works correctly, you can substitute DateTime.Now for your variable 
+           (or keep your variable and just assign DateTime.Now as its value, which is often a better approach).			
+       */
+namespace ConsoleApplication
+{
+    public class Program
+    {
+       
+
+        public static void Main()
+        {
+
+
+            DateTime currentDateTime = DateTime.Now;
+            int currentHour = currentDateTime.Hour;
+            int startMorningHour = 6;
+            int startAfternoonHour = 12;
+            int startEveningHour = 17;
+            int startNightHour = 22;
+
+            if (startMorningHour <= currentHour && currentHour < startAfternoonHour)
+            {
+                Console.WriteLine("Good morning!");
+            }
+
+            ;
+            if (startAfternoonHour <= currentHour && currentHour < startEveningHour)
+            {
+                Console.WriteLine("Good Afternoon!");
+            }
+
+            ;
+            if (startEveningHour <= currentHour && currentHour < startNightHour)
+            {
+                Console.WriteLine("Good Evening!");
+            }
+
+            ;
+            if (startNightHour <= currentHour || currentHour < startMorningHour)
+            {
+                Console.WriteLine("Good Night!");
+            }
+
+            ;
+
+            Console.WriteLine("Right now it is {0}:{1} o'clock.", currentDateTime.Hour, currentDateTime.Minute);
+        }
+    }
+}
+
+//Prime numbers
+
+class GFG
+{
+    
+    static public void Main()
+    {
+
+        
+        int a, b, i, j, flag;
+
+        
+        Console.Write(
+          "Enter lower bound of the interval: ");
+        a = Convert.ToInt32(
+          Console.ReadLine()); 
+
+        
+        Console.Write(
+          "\nEnter upper bound of the interval: ");
+        b = Convert.ToInt32(
+          Console.ReadLine()); 
+
+        
+        Console.Write("\nPrime numbers between " + a
+                      + " and " + b + " are: ");
+
+       
+     
+        if (a == 1)
+        {
+            Console.Write(a + " ");
+            a++;
+            if (b >= 2)
+            {
+                Console.Write(a + " ");
+                a++;
+            }
+        }
+        if (a == 2)
+        {
+            Console.Write(a + " ");
+        }
+
+        
+        
+        if (a % 2 == 0)
+        {
+            a++;
+        }
+
+
+        for (i = a; i <= b; i = i + 2)
+        {
+
+         
+            flag = 1;
+
+          
+            for (j = 2; j * j <= i; ++j)
+            {
+                if (i % j == 0)
+                {
+                    flag = 0;
+                    break;
+                }
+            }
+
+          
+            if (flag == 1)
+            {
+                Console.Write(i + " ");
+            }
+        }
+    }
+}
